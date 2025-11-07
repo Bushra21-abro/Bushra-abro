@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sahil Jatoi - AI Researcher | Sejong University</title>
+  <meta name="author" content="Sahil Jatoi">
+  <meta name="description" content="Sahil Jatoi - Student Researcher at MINES Lab, Sejong University. Specializing in Vision AI, Deep Learning, and Computer Vision.">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Sahil Jatoi - AI Researcher | Sejong University">
+  <meta property="og:description" content="Student Researcher at MINES Lab, pursuing Masters → PhD in AI & Robotics">
+  <meta property="og:type" content="profile">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="Sahil Jatoi, Computer Vision, Deep Learning, AI Research, Sejong University, MINES Lab, Vision AI">
+  <meta name="robots" content="index, follow">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      background-color: #fafafa;
+      color: #2c3e50;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    /* Navigation Bar */
+    .navbar {
+      background: linear-gradient(135deg, #e8f4fd 0%, #d1e7dd 100%);
+      box-shadow: 0 2px 15px rgba(52, 152, 219, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 0;
+      transition: background 0.3s ease;
+    }
+    
+    .nav-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.7rem 2rem;
+    }
+    
+    .nav-logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #2980b9;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.8rem;
+    }
+    
+    .nav-link {
+      text-decoration: none;
+      color: #34495e;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      background-color: #3498db;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .theme-toggle {
+      background: none;
+      border: 2px solid #34495e;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #34495e;
+      transition: all 0.3s ease;
+      margin-left: 0.5rem;
+    }
+    
+    .theme-toggle:hover {
+      background-color: #34495e;
+      color: white;
+      transform: rotate(180deg);
+    }
+    
+    .main-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    heading {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #2980b9;
+      display: block;
+      margin: 2rem 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #e8f4fd;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+    
+    name {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #2980b9;
+      display: block;
+      transition: color 0.3s ease;
+    }
+    
+    .icon img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+    
+    .icon:hover img {
+      transform: scale(1.1);
+    }
+    
+    .news-section {
+      border-radius: 15px;
+      margin: 1rem 0;
+      box-shadow: 0 6px 20px rgba(52, 152, 219, 0.15);
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f8fbff 0%, #e8f4fd 100%);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .news-container {
+      height: 100%;
+      overflow-y: scroll;
+      padding: 1.5rem;
+      scroll-behavior: smooth;
+    }
+    
+    .news-container::-webkit-scrollbar {
+      width: 12px;
+    }
+    
+    .news-container::-webkit-scrollbar-track {
+      background: rgba(52, 152, 219, 0.15);
+      border-radius: 10px;
+      margin: 5px;
+    }
+    
+    .news-container::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      border-radius: 10px;
+      border: 2px solid rgba(248, 251, 255, 0.3);
+      transition: background 0.3s ease;
+    }
+    
+    .news-item {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(52, 152, 219, 0.2);
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      margin-bottom: 0.2rem;
+    }
+    
+    .news-item:hover {
+      background-color: rgba(52, 152, 219, 0.1);
+      padding: 0.4rem 0.6rem;
+      transform: translateX(5px);
+    }
+    
+    .paper-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .paper-item {
+      display: flex;
+      border-radius: 15px;
+      padding: 1rem 0 1rem 1rem;
+      transition: all 0.3s ease;
+      gap: 1rem;
+      background: transparent;
+    }
+    
+    .paper-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(52, 152, 219, 0.2);
+    }
+    
+    .paper-item-img {
+      flex-shrink: 0;
+      width: 200px;
+    }
+    
+    .paper-item-img img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.25);
+      transition: box-shadow 0.3s ease;
+    }
+    
+    .paper-item-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      padding-right: 1rem;
+    }
+    
+    .paper-item-content p {
+      transition: color 0.3s ease;
+    }
+    
+    papertitle {
+      font-size: 1.0em;
+      font-weight: bold;
+      color: #2980b9;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
+    }
+    
+    a {
+      color: #3498db;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    a:hover {
+      color: #2980b9;
+      text-decoration: underline;
+    }
+    
+    footer {
+      background: linear-gradient(135deg, #e8f4fd 0%, #d1e7dd 100%);
+      padding: 2rem;
+      margin-top: 3rem;
+      border-radius: 15px 15px 0 0;
+      text-align: center;
+      color: #2980b9;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    
+    /* Dark theme */
+    body.dark-theme {
+      background-color: #121212 !important;
+      color: #e0e0e0 !important;
+    }
+    
+    body.dark-theme .navbar {
+      background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%) !important;
+    }
+    
+    body.dark-theme .nav-logo {
+      color: #64b5f6 !important;
+    }
+    
+    body.dark-theme heading {
+      color: #64b5f6 !important;
+      border-bottom-color: #2d2d2d !important;
+    }
+    
+    body.dark-theme name {
+      color: #64b5f6 !important;
+    }
+    
+    body.dark-theme papertitle {
+      color: #64b5f6 !important;
+    }
+    
+    body.dark-theme .nav-link {
+      color: #90caf9 !important;
+    }
+    
+    body.dark-theme .nav-link:hover {
+      background-color: #1976d2 !important;
+      color: white !important;
+    }
+    
+    body.dark-theme .theme-toggle {
+      border-color: #90caf9 !important;
+      color: #90caf9 !important;
+    }
+    
+    body.dark-theme .theme-toggle:hover {
+      background-color: #90caf9 !important;
+      color: #121212 !important;
+    }
+    
+    body.dark-theme .news-section {
+      background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%) !important;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    body.dark-theme .news-item {
+      border-bottom-color: rgba(144, 202, 249, 0.2) !important;
+    }
+    
+    body.dark-theme .news-item:hover {
+      background-color: rgba(144, 202, 249, 0.1) !important;
+    }
+    
+    body.dark-theme .news-container::-webkit-scrollbar-track {
+      background: rgba(144, 202, 249, 0.1) !important;
+    }
+    
+    body.dark-theme .news-container::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #64b5f6, #1976d2) !important;
+    }
+    
+    body.dark-theme .paper-item {
+      background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%) !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    body.dark-theme .paper-item:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+    }
+    
+    body.dark-theme .paper-item-img img {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    }
+    
+    body.dark-theme .paper-item-content p {
+      color: #e0e0e0 !important;
+    }
+    
+    body.dark-theme a {
+      color: #64b5f6 !important;
+    }
+    
+    body.dark-theme a:hover {
+      color: #90caf9 !important;
+    }
+    
+    body.dark-theme footer {
+      background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%) !important;
+      color: #64b5f6 !important;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-menu {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .main-content {
+        padding: 1rem;
+      }
+      
+      .paper-item {
+        flex-direction: column;
+      }
+      
+      .paper-item-img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">Sahil Jatoi</a>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#news" class="nav-link">News</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#publications" class="nav-link">Publications</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode">
+        <span id="theme-icon">🌙</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <!-- Home Section -->
+    <section id="home">
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;">
+        <tbody>
+          <tr>
+            <td style="padding:2.5%;width:40%;max-width:30%">
+              <img style="width:100%;max-width:100%;border-radius:40%;" alt="Sahil Jatoi" src="images/profile.png">
+            </td>
+            <td style="padding:2.5%;width:63%;vertical-align:middle">
+              <p style="text-align:left;">
+                <name>Sahil Jatoi</name>
+              </p>
+              <p style="line-height:1.8em;">
+                Student Researcher<br>
+                MINES Lab (Mobile INtelligent Embedded System)<br>
+                Department of AI and Robotics<br>
+                Sejong University, South Korea
+                <br><br>
+                <em>Masters → PhD Candidate in AI & Robotics</em>
+                <br><br>
+                <em><strong>Specializing in Vision AI, Deep Learning & Computer Vision</strong></em>
+              </p>
+              <p style="text-align:left;margin-top:1rem;">
+                <span class="icon" style="margin:0.8%;"><a href="https://scholar.google.com/citations?user=oZ25nlwAAAAJ&hl=en&authuser=1" target="_blank"><img src="images/icons/scholar_4.png" alt="Google Scholar"></a></span>
+                <span class="icon" style="margin:0.8%;"><a href="https://github.com/SahilJatoi744" target="_blank"><img src="images/icons/github_5.png" alt="GitHub"></a></span>
+                <span class="icon" style="margin:0.8%;"><a href="mailto:Sahiljatoi744@gmail.com"><img src="images/icons/email_icon_blue3.png" alt="Email"></a></span>
+                <span class="icon" style="margin:0.8%;"><a href="https://linkedin.com/in/sahil-jatoi" target="_blank"><img src="images/icons/linkedinblue3.png" alt="LinkedIn"></a></span>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- News Section -->
+    <section id="news">
+      <heading>News</heading>
+      <div class="news-section">
+        <div class="news-container">
+          <div class="news-item">
+            <p><strong>[2025]</strong> Started Masters → PhD in AI & Robotics at Sejong University</p>
+          </div>
+          <div class="news-item">
+            <p><strong>[2025]</strong> Joined MINES Lab as Student Researcher focusing on Vision AI</p>
+          </div>
+          <div class="news-item">
+            <p><strong>[2025]</strong> Paper submitted to Scientific Reports Journal (Nature)</p>
+          </div>
+          <div class="news-item">
+            <p><strong>[2024]</strong> Paper "FaultSeg: A Dataset for Train Wheel Defect Detection" published in Scientific Data Journal (Nature)</p>
+          </div>
+          <div class="news-item">
+            <p><strong>[2024]</strong> Submitted multiple papers to GCWOT2024 Conference (IEEE)</p>
+          </div>
+          <div class="news-item">
+            <p><strong>[2024]</strong> Joined as AI Engineer at NCRA-CMS Lab, MUET</p>
+          </div>
+          <div class="news-item">
+            <p><strong>[2023]</strong> Graduated with BE in Computer Systems Engineering (CGPA: 3.15)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <heading>About Me</heading>
+      <p>
+        I am currently a Student Researcher at <a href="https://home.sejong.ac.kr/~hyungkim/4.html" target="_blank">MINES Lab (Mobile INtelligent Embedded System)</a>, 
+        <a href="https://imc.sejong.ac.kr/myboard/p1" target="_blank">Department of AI and Robotics</a>, 
+        <a href="https://www.sejong.ac.kr/eng/index.do" target="_blank">Sejong University, Seoul, South Korea</a>.
+      </p>
+      <p style="margin-top:1rem;">
+        Previously, I worked as an AI Engineer at the National Center of Robotics and Automation (NCRA-CMS Lab) at MUET, where I deployed AI models into mobile and web applications 
+        and embedded AI models into robotics machines. I completed my Bachelor's in Computer Systems Engineering from Mehran University of Engineering & Technology.
+      </p>
+      <p style="margin-top:1rem;">
+        My research interests focus on:
+      </p>
+      <ul style="margin-left:2rem;margin-top:0.5rem;">
+        <li>Deep Learning & Computer Vision</li>
+        <li>Vision AI & Real-time Detection Systems</li>
+        <li>Robotics & Autonomous Systems</li>
+        <li>Transfer Learning & Model Optimization</li>
+        <li>Predictive Maintenance using AI</li>
+      </ul>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+      <heading>Selected Publications</heading>
+      <div class="paper-container">
+        
+        <div class="paper-item">
+          <div class="paper-item-img">
+            <img src="images/papers/FaultSeg2024.png" alt="FaultSeg paper">
+          </div>
+          <div class="paper-item-content">
+            <papertitle>FaultSeg: A Dataset for Train Wheel Defect Detection</papertitle>
+            <p>
+              <strong>Sahil Jatoi</strong>, et al.<br>
+              Scientific Data Journal (Nature), 2024
+              <br><br>
+              [<a href="https://www.nature.com/articles/s41597-025-04557-0" target="_blank">paper</a>]
+              [<a href="https://doi.org/10.5281/zenodo.13162335" target="_blank">dataset</a>]
+            </p>
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-item-img">
+            <img src="images/papers/Smog Prediction.png" alt="Smog Prediction paper">
+          </div>
+          <div class="paper-item-content">
+            <papertitle>Harnessing Machine Learning for Accurate Smog Level Prediction: A Study of Air Quality in India</papertitle>
+            <p>
+              <strong>Sahil Jatoi</strong>, et al.<br>
+              VAWKUM Transactions on Computer Sciences, 2025
+              <br><br>
+              [<a href="https://doi.org/10.21015/vtcs.v13i1.2077" target="_blank">paper</a>]
+            </p>
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-item-img">
+            <img src="images/papers/Road.png" alt="Road Maintenance paper">
+          </div>
+          <div class="paper-item-content">
+            <papertitle>Towards Smarter Road Maintenance: YOLOv7-Seg for Real-Time Detection of Surface Defects</papertitle>
+            <p>
+              <strong>Sahil Jatoi</strong>, et al.<br>
+              Pattern Recognition. ICPR 2024
+              <br><br>
+              [<a href="https://doi.org/10.1007/978-3-031-88220-3_3" target="_blank">paper</a>]
+            </p>
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-item-img">
+            <img src="images/papers/Predictive Maintenance.png" alt="Predictive Maintenance paper">
+          </div>
+          <div class="paper-item-content">
+            <papertitle>Predictive Maintenance in Urban Railway Systems Using Machine Learning Models</papertitle>
+            <p>
+              <strong>Sahil Jatoi</strong>, et al.<br>
+              GCWOT2024 Conference (IEEE)
+              <br><br>
+              [<a href="https://ieeexplore.ieee.org/document/10805699" target="_blank">paper</a>]
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <heading>Key Projects</heading>
+      <div class="paper-container">
+        
+        <div class="paper-item">
+          <div class="paper-item-img">
+            <img src="images/papers/Wheel_defect_app.png" alt="Train Wheel Detection">
+          </div>
+          <div class="paper-item-content">
+            <papertitle>Real-time Train Wheel Defect Detection System</papertitle>
+            <p>
+              Developed a comprehensive system using object detection and instance segmentation for real-time identification of train wheel defects.
+              Deployed on mobile applications for field use.
+              <br><br>
+              <strong>Tech:</strong> Python, Deep Learning, YOLOv8, Computer Vision
+            </p>
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-item-img">
+            <img src="images/papers/EDU APP.png" alt="Education App">
+          </div>
+          <div class="paper-item-content">
+            <papertitle>Multilingual Image Recognition for Early Education</papertitle>
+            <p>
+              Built an interactive learning application supporting English, Urdu, and digits with CNN-based image recognition, 
+              integrated with Google's voice library for pronunciation.
+              <br><br>
+              <strong>Tech:</strong> Python, CNN, Streamlit, TensorFlow
+            </p>
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-item-img">
+            <img src="images/papers/Robotic arm.png" alt="Robotics RL">
+          </div>
+          <div class="paper-item-content">
+            <papertitle>Reinforcement Learning for Industrial Robotics</papertitle>
+            <p>
+              Integrated reinforcement learning in industrial pick-and-place robotics and autonomous robotic arm grasping.
+              <br><br>
+              <strong>Tech:</strong> Python, Reinforcement Learning, ROS
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Visitor Map -->
+    <div style="text-align:center;margin:2rem 0;">
+      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=340&t=tt&d=YOUR_MAP_ID&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Sahil Jatoi | AI Researcher</p>
+    <p style="font-size:small;">
+      Contact: <a href="mailto:Sahiljatoi744@gmail.com">Sahiljatoi744@gmail.com</a>
+    </p>
+  </footer>
+
+  <script>
+    // Dark theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+      body.classList.add('dark-theme');
+      themeIcon.textContent = '☀️';
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-theme');
+      
+      if (body.classList.contains('dark-theme')) {
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+        console.log('Dark theme activated');
+      } else {
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+        console.log('Light theme activated');
+      }
+    });
+    
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const navbarHeight = document.querySelector('.navbar').offsetHeight;
+          const targetPosition = target.offsetTop - navbarHeight - 20;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
